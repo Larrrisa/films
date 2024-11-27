@@ -10,9 +10,9 @@ export const filmsApi = createApi({
   endpoints: (build) => ({
     getFilms: build.query<FilmResponse, void>({
       query: () => ({
-        url: `account/21652127`,
+        url: `/movie/popular`,
         headers: {
-          Authorization: `7a58695193555f647cafb130d57bb66a`,
+          Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_KEY}`,
         },
       }),
     }),
