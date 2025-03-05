@@ -1,0 +1,29 @@
+.card {
+  max-width: 228px;
+  background-color: #1a1a1a;
+}
+
+.cardMedia {
+  height: 321px;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info div {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.info span {
+  margin-left: 0.5rem;
+}
