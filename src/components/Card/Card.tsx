@@ -5,16 +5,25 @@ import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import style from "./styles.module.css";
 import { InfoIcon, StarFullIcon, StarIcon } from "../icons";
+import { Film } from "../../types/types";
 
-export default function Card() {
+interface CardProps {
+  data: Film;
+}
+
+export default function Card({ data }: CardProps) {
   return (
-    <MuiCard className={style.card}>
+    <MuiCard
+      sx={{ backgroundColor: "#1a1a1a", maxWidth: 228 }}
+      className={style.card}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
           className={style.cardMedia}
           image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
+          alt=""
+          sx={{ height: 321 }}
         />
         <CardContent>
           <Typography
@@ -23,12 +32,12 @@ export default function Card() {
             component="div"
             className={style.cardTitle}
           >
-            Lizard
+            {data.title}
           </Typography>
           <div className={style.info}>
             <div>
               <StarFullIcon />
-              <span>8.6</span>
+              <span>{data.vote_average}</span>
             </div>
             <div>
               <StarIcon />

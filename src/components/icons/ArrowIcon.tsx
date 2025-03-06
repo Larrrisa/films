@@ -10,9 +10,9 @@ export const ArrowIcon = () => {
       <path
         d="M12.728 21.2133L21.9204 12.021M21.9204 12.021L13.8476 11.6085M21.9204 12.021L22.3329 20.0938"
         stroke="#C3C3C3"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

@@ -1,12 +1,3 @@
-.card {
-  max-width: 228px;
-  background-color: #1a1a1a;
-}
-
-.cardMedia {
-  height: 321px;
-}
-
 .cardTitle {
   font-size: 1.2rem;
   font-weight: bold;

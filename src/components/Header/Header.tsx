@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import style from "./styles.module.css";
 import Searchbar from "./components/Searchbar/Searchbar";
 import ChangeThemeIcon from "../icons/ChangeThemeIcon";
-import UserIcon from "../icons/UserIcon";
+import { UserIcon } from "../icons/UserIcon";
 
 export function Header() {
   return (

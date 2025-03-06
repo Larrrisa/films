@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import style from "./styles.module.css";
-import ArrowIcon from "../icons/ArrowIcon";
+import { ArrowIcon } from "../icons/ArrowIcon";
 import {
   FacebookIcon,
   InstagramIcon,
