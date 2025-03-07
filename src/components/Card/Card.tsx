@@ -21,7 +21,7 @@ export default function Card({ data }: CardProps) {
         <CardMedia
           component="img"
           className={style.cardMedia}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
           alt=""
           sx={{ height: 321 }}
         />
