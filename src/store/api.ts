@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { FilmsResponse, film } from "../types/types";
+import { FilmsResponse, SeriesResponse } from "../types/types";
 
 export const filmsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.themoviedb.org/3/" }),
@@ -12,7 +12,15 @@ export const filmsApi = createApi({
         },
       }),
     }),
+    getSeries: build.query<SeriesResponse, void>({
+      query: () => ({
+        url: `/tv/popular`,
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_KEY}`,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useGetFilmsQuery } = filmsApi;
+export const { useGetFilmsQuery, useGetSeriesQuery } = filmsApi;

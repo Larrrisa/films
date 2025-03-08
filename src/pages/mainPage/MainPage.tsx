@@ -1,21 +1,32 @@
-import { useGetFilmsQuery } from "../../store/api";
+import { useGetFilmsQuery, useGetSeriesQuery } from "../../store/api";
 import { Typography } from "@mui/material";
 import Card from "../../components/Card/Card";
-import { Film } from "../../types/types";
+import { Film, Series } from "../../types/types";
 import style from "./styles.module.css";
 import { ArrowIconRight } from "../../components/icons";
 
 export function MainPage() {
-  const { data } = useGetFilmsQuery();
+  const { data: filmsData } = useGetFilmsQuery();
+  const { data: seriesData } = useGetSeriesQuery();
+
+  console.log(seriesData);
 
   return (
     <>
-      <Typography variant="h1" component="h1" sx={{ marginBottom: "2rem" }}>
+      <Typography variant="h2" component="h2" sx={{ marginBottom: "2rem" }}>
         Популярные фильмы <ArrowIconRight />
       </Typography>
       <div className={style.row}>
-        {data?.results.slice(0, 7).map((film: Film) => (
-          <Card data={film} key={film.id} />
+        {filmsData?.results.slice(0, 7).map((film: Film) => (
+          <Card data={{ ...film, type: "film" }} key={film.id} />
+        ))}
+      </div>
+      <Typography variant="h2" component="h2" sx={{ margin: "2rem 0" }}>
+        Популярные сериалы <ArrowIconRight />
+      </Typography>
+      <div className={style.row}>
+        {seriesData?.results.slice(0, 7).map((series: Series) => (
+          <Card data={{ ...series, type: "series" }} key={series.id} />
         ))}
       </div>
     </>
