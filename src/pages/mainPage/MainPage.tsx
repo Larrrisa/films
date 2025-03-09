@@ -9,8 +9,6 @@ export function MainPage() {
   const { data: filmsData } = useGetFilmsQuery();
   const { data: seriesData } = useGetSeriesQuery();
 
-  console.log(seriesData);
-
   return (
     <>
       <Typography variant="h2" component="h2" sx={{ marginBottom: "2rem" }}>

@@ -5,6 +5,7 @@ import { SignUpPage } from "../pages/signUpPage/SignUpPage";
 import { WishListPage } from "../pages/wishListPage/WishListPage";
 import { AccountPage } from "../pages/accountPage/AccountPage";
 import { Layout } from "../components/layout/Layout";
+import { FullInfoPage } from "../pages/fullInfoPage/FullInfoPage";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "/account",
         element: <AccountPage />,
+      },
+      {
+        path: "/movie/:id",
+        element: <FullInfoPage />,
       },
     ],
   },

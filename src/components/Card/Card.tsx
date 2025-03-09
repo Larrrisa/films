@@ -18,7 +18,7 @@ export default function Card({ data }: CardProps) {
       sx={{ backgroundColor: "#1a1a1a", maxWidth: 228 }}
       className={style.card}
     >
-      <Link to={`/${data.id}`}>
+      <Link to={`/movie/${data.id}`}>
         <CardActionArea>
           <CardMedia
             component="img"
