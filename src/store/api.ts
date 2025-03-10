@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { FilmsResponse, SeriesResponse } from "../types/types";
+import { FilmsResponse, SeriesResponse, Film } from "../types/types";
 
 export const api = createApi({
   reducerPath: "api",
@@ -14,7 +14,7 @@ export const api = createApi({
     },
   }),
   endpoints: (build) => ({
-    getFilm: build.query<FilmsResponse, number>({
+    getFilm: build.query<Film, number>({
       query: (movie_id) => `/movie/${movie_id}`,
     }),
     getFilms: build.query<FilmsResponse, void>({
