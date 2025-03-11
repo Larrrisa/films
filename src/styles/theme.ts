@@ -14,13 +14,13 @@ export const theme = createTheme({
   },
   typography: {
     h1: {
-      fontSize: 36,
+      fontSize: 56,
     },
     h2: {
-      fontSize: 28,
+      fontSize: 46,
     },
     h3: {
-      fontSize: 20,
+      fontSize: 30,
     },
     body1: {
       fontSize: 16,
@@ -43,6 +43,7 @@ export const theme = createTheme({
         body: {
           backgroundColor: "#0F0F0F",
           padding: "2rem 5rem",
+          lineHeight: "150%",
         },
         "a, a:visited": {
           textDecoration: "none",

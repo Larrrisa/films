@@ -1,8 +1,9 @@
 .footer {
   display: flex;
-  padding: 0 10rem;
+
   gap: 4rem;
   align-items: center;
+  margin-top: 5rem;
 }
 
 .nav {
