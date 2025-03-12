@@ -23,7 +23,15 @@ export const api = createApi({
     getSeries: build.query<SeriesResponse, void>({
       query: () => `/tv/popular`,
     }),
+    getTrendingFilms: build.query<FilmsResponse, void>({
+      query: () => `/trending/movie/day`,
+    }),
   }),
 });
 
-export const { useGetFilmsQuery, useGetSeriesQuery, useGetFilmQuery } = api;
+export const {
+  useGetFilmsQuery,
+  useGetSeriesQuery,
+  useGetFilmQuery,
+  useGetTrendingFilmsQuery,
+} = api;

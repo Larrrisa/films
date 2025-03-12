@@ -1,4 +1,8 @@
-import { useGetFilmsQuery, useGetSeriesQuery } from "../../store/api";
+import {
+  useGetFilmsQuery,
+  useGetSeriesQuery,
+  useGetTrendingFilmsQuery,
+} from "../../store/api";
 import { Typography } from "@mui/material";
 import Card from "../../components/Card/Card";
 import { Film, Series } from "../../types/types";
@@ -8,6 +12,9 @@ import { ArrowIconRight } from "../../components/icons";
 export function MainPage() {
   const { data: filmsData } = useGetFilmsQuery();
   const { data: seriesData } = useGetSeriesQuery();
+  const { data: trendingFilmsData } = useGetTrendingFilmsQuery();
+
+  console.log(trendingFilmsData);
 
   return (
     <>
@@ -15,7 +22,7 @@ export function MainPage() {
         Популярные фильмы <ArrowIconRight />
       </Typography>
       <div className={style.row}>
-        {filmsData?.results.slice(0, 7).map((film: Film) => (
+        {filmsData?.results.slice(0, 6).map((film: Film) => (
           <Card data={{ ...film, type: "film" }} key={film.id} />
         ))}
       </div>
@@ -23,8 +30,17 @@ export function MainPage() {
         Популярные сериалы <ArrowIconRight />
       </Typography>
       <div className={style.row}>
-        {seriesData?.results.slice(0, 7).map((series: Series) => (
+        {seriesData?.results.slice(0, 6).map((series: Series) => (
           <Card data={{ ...series, type: "series" }} key={series.id} />
+        ))}
+      </div>
+      <Typography variant="h2" component="h2" sx={{ margin: "2rem 0" }}>
+        Фильмы набирающие популярность
+        <ArrowIconRight />
+      </Typography>
+      <div className={style.row}>
+        {trendingFilmsData?.results.slice(0, 6).map((film: Film) => (
+          <Card data={{ ...film, type: "film" }} key={film.id} />
         ))}
       </div>
     </>
