@@ -23,15 +23,17 @@ export function FullInfoPage() {
           {itemData?.title}
         </Typography>
         <p>{itemData?.tagline}</p>
-        <p>{itemData?.release_date}</p>
         <p>
-          URL: <a>{itemData?.homepage}</a>
+          <span>Release date:</span> {itemData?.release_date}
+        </p>
+        <p>
+          <span>URL:</span> <a>{itemData?.homepage}</a>
         </p>
         <p>{itemData?.overview}</p>
-        <div>
-          Genres:
+        <div className={style.genres}>
+          <span>Genres:</span>
           {itemData?.genres.map((genre: Genre) => (
-            <p>{genre.name}</p>
+            <a href="#">{genre.name}</a>
           ))}
         </div>
       </div>
