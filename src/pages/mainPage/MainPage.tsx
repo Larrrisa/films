@@ -4,7 +4,7 @@ import {
   useGetTrendingFilmsQuery,
 } from "../../store/api";
 import { Typography } from "@mui/material";
-import Card from "../../components/Card/Card";
+import Card from "../../components/сard/Card";
 import { Film, Series } from "../../types/types";
 import style from "./styles.module.css";
 import { ArrowIconRight } from "../../components/icons";
