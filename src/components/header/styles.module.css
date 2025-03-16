@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f0f0f;
+  margin-bottom: 5rem;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  font-size: 2rem;
+  width: 100%;
+}
+.login {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+.login span {
+  width: 24px;
+  height: 24px;
+}
+
+.theme {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
