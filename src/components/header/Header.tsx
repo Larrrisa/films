@@ -3,8 +3,19 @@ import style from "./styles.module.css";
 import Searchbar from "./components/Searchbar";
 import ChangeThemeIcon from "../icons/ChangeThemeIcon";
 import { UserIcon } from "../icons/UserIcon";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
+  const navigate = useNavigate();
+  const isAuth = localStorage.getItem("isAuthenticated") === "true";
+
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated");
+
+    navigate("/");
+  };
+
   return (
     <header>
       <nav className={style.nav}>
@@ -31,11 +42,26 @@ export function Header() {
           <li>
             <Searchbar />
           </li>
-          <li>
-            <a href="#">Буду смотреть</a>
-          </li>
+          {isAuth && (
+            <li>
+              <a href="#">Буду смотреть</a>
+            </li>
+          )}
           <li className={style.login}>
-            <a href="#">Вход</a>
+            {isAuth ? (
+              <button
+                onClick={handleLogout}
+                style={{
+                  background: "white",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                Выход
+              </button>
+            ) : (
+              <Link to="/signin">Вход</Link>
+            )}
             <span>
               <UserIcon />
             </span>

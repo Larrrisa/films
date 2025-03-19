@@ -36,6 +36,20 @@ export function SignUpPage() {
     const updatedUsers = [...existingUsers, data];
     localStorage.setItem("users", JSON.stringify(updatedUsers));
 
+    // Save current user with password in localStorage
+    localStorage.setItem(
+      "currentUser",
+      JSON.stringify({
+        fullName: data.fullName,
+        email: data.email,
+        password: data.password,
+        isLogged: true,
+      })
+    );
+
+    // Set authentication status
+    localStorage.setItem("isAuthenticated", "true");
+
     setSuccess(true);
     reset();
   };
