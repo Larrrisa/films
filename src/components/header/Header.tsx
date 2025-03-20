@@ -3,8 +3,10 @@ import style from "./styles.module.css";
 import Searchbar from "./components/Searchbar";
 import ChangeThemeIcon from "../icons/ChangeThemeIcon";
 import { UserIcon } from "../icons/UserIcon";
-import { useState, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
+
+import { useThemeContext } from "../../shared/context/ThemeProvider";
 
 export function Header() {
   const navigate = useNavigate();
@@ -15,6 +17,8 @@ export function Header() {
 
     navigate("/");
   };
+
+  const { mode, toggleTheme } = useThemeContext();
 
   return (
     <header>
@@ -67,7 +71,9 @@ export function Header() {
             </span>
           </li>
           <li className={style.theme}>
-            <ChangeThemeIcon />
+            <div onClick={toggleTheme}>
+              <ChangeThemeIcon />
+            </div>
           </li>
         </ul>
       </nav>

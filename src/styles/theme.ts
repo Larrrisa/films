@@ -1,16 +1,37 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, Theme } from "@mui/material/styles";
+import { PaletteMode } from "@mui/material";
 
-export const theme = createTheme({
+// Define theme settings for both light and dark modes
+const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
-    primary: {
-      main: "#0F0F0F",
-    },
-    background: {
-      default: "#0F0F0F",
-    },
-    text: {
-      primary: "#C3C3C3",
-    },
+    mode,
+    ...(mode === "dark"
+      ? {
+          // Dark mode
+          primary: {
+            main: "#0F0F0F",
+          },
+          background: {
+            default: "#0F0F0F",
+            paper: "#242424",
+          },
+          text: {
+            primary: "#C3C3C3",
+          },
+        }
+      : {
+          // Light mode
+          primary: {
+            main: "#1976d2",
+          },
+          background: {
+            default: "#f5f5f5",
+            paper: "#ffffff",
+          },
+          text: {
+            primary: "#333333",
+          },
+        }),
   },
   typography: {
     h1: {
@@ -31,7 +52,7 @@ export const theme = createTheme({
   },
   components: {
     MuiCssBaseline: {
-      styleOverrides: {
+      styleOverrides: (theme: Theme) => ({
         "*": {
           padding: 0,
           margin: 0,
@@ -41,49 +62,52 @@ export const theme = createTheme({
           fontSize: "62.5%",
         },
         body: {
-          backgroundColor: "#0F0F0F",
+          backgroundColor: theme.palette.background.default,
           padding: "2rem 5rem",
           lineHeight: "150%",
         },
         "a, a:visited": {
           textDecoration: "none",
-          color: "#C3C3C3",
+          color: theme.palette.text.primary,
           cursor: "pointer",
           "&:hover": {
-            color: "#FFFFFF",
+            color: theme.palette.mode === "light" ? "#000000" : "#FFFFFF",
           },
         },
-      },
+      }),
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root: {
+        root: ({ theme }: { theme: Theme }) => ({
           "& fieldset": {
-            borderColor: "#C3C3C3",
+            borderColor: theme.palette.mode === "light" ? "#757575" : "#C3C3C3",
           },
           "&:hover fieldset": {
-            borderColor: "#FFFFFF",
+            borderColor: theme.palette.mode === "light" ? "#000000" : "#FFFFFF",
           },
           "&.Mui-focused fieldset": {
-            borderColor: "red",
+            borderColor: theme.palette.primary.main,
           },
           input: {
-            color: "#FFFFFF",
-            backgroundColor: "#242424",
+            color: theme.palette.mode === "light" ? "#000000" : "#FFFFFF",
+            backgroundColor:
+              theme.palette.mode === "light" ? "#ffffff" : "#242424",
           },
-        },
+        }),
       },
     },
-
     MuiInputLabel: {
       styleOverrides: {
-        root: {
-          color: "#C3C3C3",
+        root: ({ theme }: { theme: Theme }) => ({
+          color: theme.palette.mode === "light" ? "#757575" : "#C3C3C3",
           "&.Mui-focused": {
-            color: "#FFFFFF",
+            color: theme.palette.mode === "light" ? "#000000" : "#FFFFFF",
           },
-        },
+        }),
       },
     },
   },
 });
+
+export const createAppTheme = (mode: PaletteMode) =>
+  createTheme(getDesignTokens(mode));
