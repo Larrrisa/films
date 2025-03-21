@@ -14,10 +14,7 @@ interface CardProps {
 
 export default function Card({ data }: CardProps) {
   return (
-    <MuiCard
-      sx={{ backgroundColor: "#1a1a1a", maxWidth: 228 }}
-      className={style.card}
-    >
+    <MuiCard sx={{ maxWidth: 228 }} className={style.card}>
       <Link to={`/movie/${data.id}`}>
         <CardActionArea>
           <CardMedia
