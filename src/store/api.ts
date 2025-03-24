@@ -26,6 +26,9 @@ export const api = createApi({
     getTrendingFilms: build.query<FilmsResponse, void>({
       query: () => `/trending/movie/day`,
     }),
+    getByKeyword: build.query<FilmsResponse, string>({
+      query: (keyword) => `/search/multi?query=${keyword}`,
+    }),
   }),
 });
 
@@ -34,4 +37,5 @@ export const {
   useGetSeriesQuery,
   useGetFilmQuery,
   useGetTrendingFilmsQuery,
+  useGetByKeywordQuery,
 } = api;

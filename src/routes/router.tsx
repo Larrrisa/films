@@ -6,7 +6,7 @@ import { WishListPage } from "../pages/wishListPage/WishListPage";
 import { AccountPage } from "../pages/accountPage/AccountPage";
 import { Layout } from "../components/layout/Layout";
 import { FullInfoPage } from "../pages/fullInfoPage/FullInfoPage";
-
+import { SearchResultsPage } from "../pages/searchResultsPage/SearchResultsPage";
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -34,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "/movie/:id",
         element: <FullInfoPage />,
+      },
+      {
+        path: "/search",
+        element: <SearchResultsPage />,
       },
     ],
   },

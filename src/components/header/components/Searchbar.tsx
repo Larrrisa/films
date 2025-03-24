@@ -1,10 +1,27 @@
-import { TextField, MenuItem, Select, Box } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
+import { Box, Input, debounce } from "@mui/material";
+
+import { useCallback, useState } from "react";
 import styles from "./styles.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBar() {
-  const [category, setCategory] = useState("all");
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const debouncedNavigate = useCallback(
+    debounce((searchTerm: string) => {
+      if (searchTerm.trim()) {
+        navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+      }
+    }, 1000),
+    [navigate]
+  );
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearch(value);
+    debouncedNavigate(value);
+  };
 
   return (
     <Box className={styles.searchContainer}>
@@ -17,12 +34,12 @@ export default function SearchBar() {
         <MenuItem value="movies">Movies</MenuItem>
         <MenuItem value="tv">TV Shows</MenuItem>
       </Select> */}
-      <TextField
-        variant="outlined"
+      <Input
         placeholder="Search IMDb"
         className={styles.input}
+        value={search}
+        onChange={handleSearch}
       />
-      <SearchIcon className={styles.icon} />
     </Box>
   );
 }
