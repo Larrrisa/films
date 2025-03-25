@@ -1,5 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { useGetByKeywordQuery } from "../../store/api";
+import Card from "../../components/сard/Card";
+import style from "./styles.module.css";
+import { Typography } from "@mui/material";
 
 export const SearchResultsPage = () => {
   const location = useLocation();
@@ -9,10 +12,10 @@ export const SearchResultsPage = () => {
 
   return (
     <div>
-      <h1>Search results</h1>
-      <div>
+      <Typography variant="h1">Search results</Typography>
+      <div className={style.cards}>
         {data?.results.map((item) => (
-          <div key={item.id}>{item.title || item.name || "Untitled"}</div>
+          <Card key={item.id} data={item} />
         ))}
       </div>
     </div>
