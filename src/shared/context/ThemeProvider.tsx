@@ -1,16 +1,13 @@
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import { useContext, createContext, useState } from "react";
 import { createAppTheme } from "../../styles/theme";
-import { CssBaseline } from "@mui/material";
-import { useEffect } from "react";
-// Define the type for the theme context
+
 interface ThemeContextType {
   theme: ReturnType<typeof createAppTheme>;
   toggleTheme: () => void;
   mode: "light" | "dark";
 }
 
-// Create context with proper typing
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
@@ -22,11 +19,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     setMode(newMode);
     setTheme(createAppTheme(newMode));
   };
-
-  useEffect(() => {
-    console.log("Current mode:", mode);
-    console.log("Theme palette mode:", theme.palette.mode);
-  }, [mode, theme]);
 
   const themeContextValue: ThemeContextType = {
     theme,

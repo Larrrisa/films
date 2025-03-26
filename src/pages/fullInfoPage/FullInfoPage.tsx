@@ -11,7 +11,7 @@ export function FullInfoPage() {
   const itemData = data?.data;
 
   return (
-    <section className={style.main}>
+    <section className={style.main} key={itemData?.id}>
       <div>
         <img
           src={`https://image.tmdb.org/t/p/w500${itemData?.poster_path}`}
