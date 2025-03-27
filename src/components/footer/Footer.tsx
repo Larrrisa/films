@@ -14,33 +14,11 @@ export function Footer() {
       <nav className={style.nav}>
         <ul>
           <li className={style.item}>
-            <Link to="/films">Фильмы</Link>
+            <Link to="/films">Films</Link>
             <ArrowIcon />
           </li>
           <li className={style.item}>
-            <Link to="/series">Сериалы</Link>
-            <ArrowIcon />
-          </li>
-
-          <li className={style.item}>
-            <Link to="/anime">Аниме</Link>
-            <ArrowIcon />
-          </li>
-          <li className={style.item}>
-            <Link to="/cartoons">Мультфильмы</Link>
-            <ArrowIcon />
-          </li>
-          <li className={style.item}>
-            <Link to="/actors">Актеры</Link>
-            <ArrowIcon />
-          </li>
-          <li className={style.item}>
-            <Link to="/directors">Режиссеры</Link>
-            <ArrowIcon />
-          </li>
-
-          <li className={style.item}>
-            <a href="#">Буду смотреть</a>
+            <Link to="/shows">Shows</Link>
             <ArrowIcon />
           </li>
         </ul>

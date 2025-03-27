@@ -4,4 +4,16 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   margin-bottom: 6rem;
+  gap: 1rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.heading a {
+  margin-top: 1rem;
 }

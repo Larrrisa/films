@@ -23,26 +23,19 @@ export function Header() {
   return (
     <header>
       <nav className={style.nav}>
+        <div className={style.logo}>
+          <Link to="/">
+            <img src="/logo.png" alt="logo" />
+          </Link>
+        </div>
         <ul>
           <li>
-            <Link to="/films">Фильмы</Link>
+            <Link to="/films">Films</Link>
           </li>
           <li>
-            <Link to="/series">Сериалы</Link>
+            <Link to="/series">TV Shows</Link>
           </li>
 
-          <li>
-            <Link to="/anime">Аниме</Link>
-          </li>
-          <li>
-            <Link to="/cartoons">Мультфильмы</Link>
-          </li>
-          <li>
-            <Link to="/actors">Актеры</Link>
-          </li>
-          <li>
-            <Link to="/directors">Режиссеры</Link>
-          </li>
           <li>
             <Searchbar />
           </li>
@@ -64,11 +57,15 @@ export function Header() {
                 Выход
               </button>
             ) : (
-              <Link to="/signin">Вход</Link>
+              <Link to="/signin">
+                <div className={style.login_button}>
+                  Вход
+                  <span>
+                    <UserIcon />
+                  </span>
+                </div>
+              </Link>
             )}
-            <span>
-              <UserIcon />
-            </span>
           </li>
           <li className={style.theme}>
             <div onClick={toggleTheme}>
