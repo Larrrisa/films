@@ -14,8 +14,6 @@ export function MainPage() {
   const { data: seriesData } = useGetSeriesQuery();
   const { data: trendingFilmsData } = useGetTrendingFilmsQuery();
 
-  console.log(trendingFilmsData);
-
   return (
     <>
       <div className={style.heading}>
@@ -28,7 +26,7 @@ export function MainPage() {
       </div>
 
       <div className={style.row}>
-        {filmsData?.results.slice(0, 5).map((film: Film) => (
+        {filmsData?.results.slice(0, 4).map((film: Film) => (
           <Card data={{ ...film, type: "film" }} key={film.id} />
         ))}
       </div>
@@ -41,7 +39,7 @@ export function MainPage() {
         </Link>
       </div>
       <div className={style.row}>
-        {seriesData?.results.slice(0, 5).map((series: Series) => (
+        {seriesData?.results.slice(0, 4).map((series: Series) => (
           <Card data={{ ...series, type: "series" }} key={series.id} />
         ))}
       </div>
@@ -54,7 +52,7 @@ export function MainPage() {
         </Link>
       </div>
       <div className={style.row}>
-        {trendingFilmsData?.results.slice(0, 5).map((film: Film) => (
+        {trendingFilmsData?.results.slice(0, 4).map((film: Film) => (
           <Card data={{ ...film, type: "film" }} key={film.id} />
         ))}
       </div>

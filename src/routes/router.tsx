@@ -7,6 +7,8 @@ import { AccountPage } from "../pages/accountPage/AccountPage";
 import { Layout } from "../components/layout/Layout";
 import { FullInfoPage } from "../pages/fullInfoPage/FullInfoPage";
 import { SearchResultsPage } from "../pages/searchResultsPage/SearchResultsPage";
+import { FilmsPage } from "../pages/filmsPage/FilmsPage";
+
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -38,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: "/search",
         element: <SearchResultsPage />,
+      },
+      {
+        path: "/films",
+        element: <FilmsPage />,
       },
     ],
   },

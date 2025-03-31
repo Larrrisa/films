@@ -10,11 +10,12 @@ import { Link } from "react-router";
 
 interface CardProps {
   data: Film | Series;
+  width?: number;
 }
 
-export default function Card({ data }: CardProps) {
+export default function Card({ data, width = 400 }: CardProps) {
   return (
-    <MuiCard sx={{ width: 400 }} className={style.card}>
+    <MuiCard sx={{ width: width }} className={style.card}>
       <Link to={`/movie/${data.id}`}>
         <CardActionArea>
           <CardMedia
