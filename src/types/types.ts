@@ -3,9 +3,9 @@ export interface FilmsResponse {
   results: Film[];
 }
 
-export interface SeriesResponse {
+export interface ShowsResponse {
   page: number;
-  results: Series[];
+  results: Shows[];
 }
 
 export interface Film {
@@ -22,7 +22,7 @@ export interface Film {
   type: "film";
 }
 
-export interface Series {
+export interface Shows {
   id: number;
   name: string;
   description?: string;

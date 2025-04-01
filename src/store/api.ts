@@ -20,7 +20,7 @@ export const api = createApi({
     getFilms: build.query<FilmsResponse, void>({
       query: () => `/movie/popular`,
     }),
-    getSeries: build.query<SeriesResponse, void>({
+    getShows: build.query<SeriesResponse, void>({
       query: () => `/tv/popular`,
     }),
     getTrendingFilms: build.query<FilmsResponse, void>({
@@ -34,7 +34,7 @@ export const api = createApi({
 
 export const {
   useGetFilmsQuery,
-  useGetSeriesQuery,
+  useGetShowsQuery,
   useGetFilmQuery,
   useGetTrendingFilmsQuery,
   useGetByKeywordQuery,

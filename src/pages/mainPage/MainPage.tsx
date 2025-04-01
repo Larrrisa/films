@@ -1,17 +1,17 @@
 import {
   useGetFilmsQuery,
-  useGetSeriesQuery,
+  useGetShowsQuery,
   useGetTrendingFilmsQuery,
 } from "../../store/api";
 import { Typography } from "@mui/material";
 import Card from "../../components/сard/Card";
-import { Film, Series } from "../../types/types";
+import { Film, Shows } from "../../types/types";
 import style from "./styles.module.css";
 import { ArrowIconRight } from "../../components/icons";
 import { Link } from "react-router-dom";
 export function MainPage() {
   const { data: filmsData } = useGetFilmsQuery();
-  const { data: seriesData } = useGetSeriesQuery();
+  const { data: seriesData } = useGetShowsQuery();
   const { data: trendingFilmsData } = useGetTrendingFilmsQuery();
 
   return (
@@ -39,7 +39,7 @@ export function MainPage() {
         </Link>
       </div>
       <div className={style.row}>
-        {seriesData?.results.slice(0, 4).map((series: Series) => (
+        {seriesData?.results.slice(0, 4).map((series: Shows) => (
           <Card data={{ ...series, type: "series" }} key={series.id} />
         ))}
       </div>

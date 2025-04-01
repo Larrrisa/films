@@ -8,6 +8,7 @@ import { Layout } from "../components/layout/Layout";
 import { FullInfoPage } from "../pages/fullInfoPage/FullInfoPage";
 import { SearchResultsPage } from "../pages/searchResultsPage/SearchResultsPage";
 import { FilmsPage } from "../pages/filmsPage/FilmsPage";
+import { ShowsPage } from "../pages/showsPage/ShowsPage";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: "/films",
         element: <FilmsPage />,
+      },
+      {
+        path: "/shows",
+        element: <ShowsPage />,
       },
     ],
   },
