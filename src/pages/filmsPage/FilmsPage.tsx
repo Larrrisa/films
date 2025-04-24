@@ -1,3 +1,4 @@
+import React from "react";
 import style from "./styles.module.css";
 import { useGetFilmsQuery } from "../../store/api";
 import Card from "../../components/сard/Card";
