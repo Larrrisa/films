@@ -17,8 +17,8 @@ export const api = createApi({
     getFilm: build.query<Film, number>({
       query: (movie_id) => `/movie/${movie_id}`,
     }),
-    getFilms: build.query<FilmsResponse, void>({
-      query: () => `/movie/popular`,
+    getFilms: build.query<FilmsResponse, number>({
+      query: (page) => `/movie/popular?page=${page}`,
     }),
     getShows: build.query<SeriesResponse, void>({
       query: () => `/tv/popular`,
