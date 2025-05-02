@@ -10,7 +10,7 @@ import style from "./styles.module.css";
 import { ArrowIconRight } from "../../components/icons";
 import { Link } from "react-router-dom";
 export function MainPage() {
-  const { data: filmsData } = useGetFilmsQuery();
+  const { data: filmsData } = useGetFilmsQuery(1);
   const { data: seriesData } = useGetShowsQuery();
   const { data: trendingFilmsData } = useGetTrendingFilmsQuery();
 

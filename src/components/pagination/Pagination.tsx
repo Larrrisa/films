@@ -1,6 +1,6 @@
 import * as React from "react";
 import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
+import style from "./styles.module.css";
 
 type Props = {
   page: number;
@@ -18,8 +18,8 @@ export default function PaginationControlled({
   };
 
   return (
-    <Stack spacing={2}>
+    <div className={style.pagination}>
       <Pagination count={totalPage} page={page} onChange={handleChange} />
-    </Stack>
+    </div>
   );
 }
