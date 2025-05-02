@@ -33,7 +33,7 @@ export function Header() {
             <Link to="/films">Films</Link>
           </li>
           <li>
-            <Link to="/series">TV Shows</Link>
+            <Link to="/shows">TV Shows</Link>
           </li>
 
           <li>
