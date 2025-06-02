@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { FilmsResponse, SeriesResponse, Film } from "../types/types";
+import { FilmsResponse, ShowsResponse, Film } from "../types/types";
 
 export const api = createApi({
   reducerPath: "api",
@@ -20,8 +20,8 @@ export const api = createApi({
     getFilms: build.query<FilmsResponse, number>({
       query: (page) => `/movie/popular?page=${page}`,
     }),
-    getShows: build.query<SeriesResponse, void>({
-      query: () => `/tv/popular`,
+    getShows: build.query<ShowsResponse, number>({
+      query: (page) => `/tv/popular?page=${page}`,
     }),
     getTrendingFilms: build.query<FilmsResponse, void>({
       query: () => `/trending/movie/day`,

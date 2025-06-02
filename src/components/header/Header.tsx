@@ -59,7 +59,7 @@ export function Header() {
             ) : (
               <Link to="/signin">
                 <div className={style.login_button}>
-                  Вход
+                  Sign in
                   <span>
                     <UserIcon />
                   </span>

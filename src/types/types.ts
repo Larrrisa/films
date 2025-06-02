@@ -1,11 +1,15 @@
 export interface FilmsResponse {
   page: number;
   results: Film[];
+  total_pages: number;
+  total_results?: number;
 }
 
 export interface ShowsResponse {
   page: number;
   results: Shows[];
+  total_pages: number;
+  total_results?: number;
 }
 
 export interface Film {
