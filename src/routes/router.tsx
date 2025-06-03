@@ -9,6 +9,7 @@ import { FullInfoPage } from "../pages/fullInfoPage/FullInfoPage";
 import { SearchResultsPage } from "../pages/searchResultsPage/SearchResultsPage";
 import { FilmsPage } from "../pages/filmsPage/FilmsPage";
 import { ShowsPage } from "../pages/showsPage/ShowsPage";
+import { TrendingFilmsPage } from "../pages/trendingFilmsPage/TrendingFilmsPage";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
       {
         path: "/shows",
         element: <ShowsPage />,
+      },
+      {
+        path: "/trending",
+        element: <TrendingFilmsPage />,
       },
     ],
   },

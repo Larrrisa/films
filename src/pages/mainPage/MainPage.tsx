@@ -11,7 +11,7 @@ import { ArrowIconRight } from "../../components/icons";
 import { Link } from "react-router-dom";
 export function MainPage() {
   const { data: filmsData } = useGetFilmsQuery(1);
-  const { data: seriesData } = useGetShowsQuery();
+  const { data: seriesData } = useGetShowsQuery(1);
   const { data: trendingFilmsData } = useGetTrendingFilmsQuery();
 
   return (
