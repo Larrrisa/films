@@ -1,11 +1,13 @@
-import style from "./styles.module.css";
-import React from "react";
-import { useGetShowsQuery } from "../../store/api";
-import Card from "../../components/сard/Card";
-import { Shows } from "../../types/types";
 import { Typography } from "@mui/material";
-import PaginationControlled from "../../components/pagination/Pagination";
+import React from "react";
 import { useSearchParams } from "react-router";
+
+import PaginationControlled from "../../components/pagination/Pagination";
+import Card from "../../components/сard/Card";
+import { useGetShowsQuery } from "../../store/api";
+import { Shows } from "../../types/types";
+
+import style from "./styles.module.css";
 
 export function ShowsPage() {
   const [currentPage, setCurrentPage] = React.useState(1);

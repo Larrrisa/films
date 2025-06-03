@@ -1,8 +1,10 @@
-import { useLocation } from "react-router-dom";
-import { useGetByKeywordQuery } from "../../store/api";
-import Card from "../../components/сard/Card";
-import style from "./styles.module.css";
 import { Typography } from "@mui/material";
+import { useLocation } from "react-router-dom";
+
+import Card from "../../components/сard/Card";
+import { useGetByKeywordQuery } from "../../store/api";
+
+import style from "./styles.module.css";
 
 export const SearchResultsPage = () => {
   const location = useLocation();

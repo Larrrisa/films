@@ -1,8 +1,10 @@
+import { Typography } from "@mui/material";
 import { useParams } from "react-router";
-import style from "./styles.module.css";
+
 import { useGetFilmQuery } from "../../store/api";
 import { Genre } from "../../types/types";
-import { Typography } from "@mui/material";
+
+import style from "./styles.module.css";
 
 export function FullInfoPage() {
   const { id } = useParams();

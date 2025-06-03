@@ -1,6 +1,8 @@
 import { Outlet } from "react-router";
-import { Header } from "../header/Header";
+
 import { Footer } from "../footer/Footer";
+import { Header } from "../header/Header";
+
 import style from "./styles.module.css";
 
 export function Layout() {

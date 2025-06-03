@@ -1,13 +1,15 @@
 import { Link } from "react-router";
-import style from "./styles.module.css";
+
 import { ArrowIcon } from "../icons/ArrowIcon";
 import {
   FacebookIcon,
   InstagramIcon,
+  TikTokIcon,
   XIcon,
   YoutubeIcon,
-  TikTokIcon,
 } from "../icons/social";
+
+import style from "./styles.module.css";
 export function Footer() {
   return (
     <footer className={style.footer}>

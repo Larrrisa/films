@@ -1,8 +1,8 @@
-import { Box, Input, debounce } from "@mui/material";
-
+import { Box, debounce, Input } from "@mui/material";
 import { useCallback, useState } from "react";
-import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
+
+import styles from "./styles.module.css";
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");

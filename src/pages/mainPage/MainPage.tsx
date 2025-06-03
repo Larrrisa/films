@@ -1,14 +1,17 @@
+import { Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+
+import { ArrowIconRight } from "../../components/icons";
+import Card from "../../components/сard/Card";
 import {
   useGetFilmsQuery,
   useGetShowsQuery,
   useGetTrendingFilmsQuery,
 } from "../../store/api";
-import { Typography } from "@mui/material";
-import Card from "../../components/сard/Card";
 import { Film, Shows } from "../../types/types";
+
 import style from "./styles.module.css";
-import { ArrowIconRight } from "../../components/icons";
-import { Link } from "react-router-dom";
+
 export function MainPage() {
   const { data: filmsData } = useGetFilmsQuery(1);
   const { data: seriesData } = useGetShowsQuery(1);

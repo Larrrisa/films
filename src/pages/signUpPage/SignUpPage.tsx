@@ -1,8 +1,8 @@
-import { TextField, Button, Typography } from "@mui/material";
-import style from "./styles.module.css";
-
-import { useForm } from "react-hook-form";
+import { Button, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+
+import style from "./styles.module.css";
 
 interface SignUpFormData {
   fullName: string;

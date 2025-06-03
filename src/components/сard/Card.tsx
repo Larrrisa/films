@@ -1,12 +1,14 @@
 import MuiCard from "@mui/material/Card";
+import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import CardActionArea from "@mui/material/CardActionArea";
-import style from "./styles.module.css";
-import { InfoIcon, StarFullIcon, StarIcon } from "../icons";
-import { Film, Series } from "../../types/types";
 import { Link } from "react-router";
+
+import { Film, Series } from "../../types/types";
+import { InfoIcon, StarFullIcon, StarIcon } from "../icons";
+
+import style from "./styles.module.css";
 
 interface CardProps {
   data: Film | Series;

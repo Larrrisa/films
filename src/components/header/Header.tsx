@@ -1,12 +1,12 @@
 import { Link } from "react-router";
-import style from "./styles.module.css";
-import Searchbar from "./components/Searchbar";
-import ChangeThemeIcon from "../icons/ChangeThemeIcon";
-import { UserIcon } from "../icons/UserIcon";
-
 import { useNavigate } from "react-router-dom";
 
 import { useThemeContext } from "../../shared/context/ThemeProvider";
+import ChangeThemeIcon from "../icons/ChangeThemeIcon";
+import { UserIcon } from "../icons/UserIcon";
+import Searchbar from "./components/Searchbar";
+
+import style from "./styles.module.css";
 
 export function Header() {
   const navigate = useNavigate();

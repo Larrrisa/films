@@ -1,11 +1,13 @@
-import React from "react";
-import style from "./styles.module.css";
-import { useGetFilmsQuery } from "../../store/api";
-import Card from "../../components/сard/Card";
-import { Film } from "../../types/types";
-import PaginationControlled from "../../components/pagination/Pagination";
-import { useSearchParams } from "react-router";
 import { Typography } from "@mui/material";
+import React from "react";
+import { useSearchParams } from "react-router";
+
+import PaginationControlled from "../../components/pagination/Pagination";
+import Card from "../../components/сard/Card";
+import { useGetFilmsQuery } from "../../store/api";
+import { Film } from "../../types/types";
+
+import style from "./styles.module.css";
 
 export function FilmsPage() {
   const [currentPage, setCurrentPage] = React.useState(1);

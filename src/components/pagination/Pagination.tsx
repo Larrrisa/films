@@ -1,5 +1,6 @@
-import * as React from "react";
 import Pagination from "@mui/material/Pagination";
+import * as React from "react";
+
 import style from "./styles.module.css";
 
 type Props = {
