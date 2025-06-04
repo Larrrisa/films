@@ -25,7 +25,12 @@ export default function Card({ data, width = 400 }: CardProps) {
             className={style.cardMedia}
             image={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
             alt={data.type === "film" ? data.title : data.name}
-            sx={{ height: 321 }}
+            sx={{
+              width: "auto",
+              height: "auto",
+              objectFit: "contain",
+              maxWidth: "100%",
+            }}
           />
           <CardContent>
             <Typography
