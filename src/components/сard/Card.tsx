@@ -39,7 +39,7 @@ export default function Card({ data, width = 400 }: CardProps) {
             <div className={style.info}>
               <div>
                 <StarFullIcon />
-                <span>{data.vote_average}</span>
+                <span>{data.vote_average?.toFixed(1)}</span>
               </div>
               <div>
                 <StarIcon />
