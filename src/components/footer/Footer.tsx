@@ -20,7 +20,11 @@ export function Footer() {
             <ArrowIcon />
           </li>
           <li className={style.item}>
-            <Link to="/shows">Shows</Link>
+            <Link to="/shows">TV shows</Link>
+            <ArrowIcon />
+          </li>
+          <li className={style.item}>
+            <Link to="/trending">Trending films</Link>
             <ArrowIcon />
           </li>
         </ul>

@@ -5,13 +5,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router";
 
-import { Film, Series } from "../../types/types";
+import { Film, Shows } from "../../types/types";
 import { InfoIcon, StarFullIcon, StarIcon } from "../icons";
 
 import style from "./styles.module.css";
 
 interface CardProps {
-  data: Film | Series;
+  data: Film | Shows;
   width?: number;
 }
 

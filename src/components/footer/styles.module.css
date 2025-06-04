@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-
+  justify-content: space-between;
   gap: 4rem;
   align-items: center;
   margin-top: 5rem;
@@ -9,8 +9,7 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 75%;
+  justify-content: flex-start;
 }
 
 .nav ul {
@@ -20,6 +19,7 @@
   list-style-type: none;
   font-size: 1.5rem;
   width: 100%;
+  gap: 3rem;
 }
 
 .item {
