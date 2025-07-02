@@ -1,4 +1,6 @@
 import { Typography } from "@mui/material";
+import Skeleton from "@mui/material/Skeleton";
+import Stack from "@mui/material/Stack";
 import React from "react";
 import { useSearchParams } from "react-router";
 
@@ -11,7 +13,7 @@ import style from "./styles.module.css";
 
 export function FilmsPage() {
   const [currentPage, setCurrentPage] = React.useState(1);
-  const { data } = useGetFilmsQuery(currentPage);
+  const { data, isLoading } = useGetFilmsQuery(currentPage);
   const filmsData = data?.results;
   const totalPages = data?.total_pages || 0;
   const [searchParams, setSearchParams] = useSearchParams();
@@ -25,16 +27,32 @@ export function FilmsPage() {
   return (
     <>
       <Typography variant="h1">Films</Typography>
-      <div className={style.container}>
-        {filmsData?.map((film: Film) => (
-          <Card data={{ ...film, type: "film" }} key={film.id} width={300} />
-        ))}
-        <PaginationControlled
-          totalPage={totalPages}
-          page={currentPage}
-          onPageChange={changePage}
-        />
-      </div>
+      <Stack className={style.container} direction={"column"} spacing={2}>
+        <Stack flexWrap={"wrap"} direction={"row"} gap={2}>
+          {isLoading
+            ? Array.from({ length: 12 }, (_, index) => (
+                <Stack spacing={1} key={index}>
+                  <Skeleton variant="rectangular" width={300} height={400} />
+                  <Skeleton variant="text" width={300} />
+                  <Skeleton variant="text" width={300} />
+                </Stack>
+              ))
+            : filmsData?.map((film: Film) => (
+                <Card
+                  data={{ ...film, type: "film" }}
+                  key={film.id}
+                  width={300}
+                />
+              ))}
+        </Stack>
+        <Stack>
+          <PaginationControlled
+            totalPage={totalPages}
+            page={currentPage}
+            onPageChange={changePage}
+          />
+        </Stack>
+      </Stack>
     </>
   );
 }
