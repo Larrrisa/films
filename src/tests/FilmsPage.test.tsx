@@ -1,21 +1,34 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { createRoutesStub } from "react-router";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { FilmsPage } from "../pages/filmsPage/FilmsPage";
 import * as filmsApi from "../store/api";
-import { mockUseGetFilmsQuery } from "./mocks/filmsApiMock";
+import {
+  mockUseGetFilmsQueryLoading,
+  mockUseGetFilmsQuerySuccess,
+} from "./mocks/filmsApiMock";
 
 describe("FilmsPage", () => {
-  beforeEach(() => {
-    mockUseGetFilmsQuery();
-  });
-
   afterEach(() => {
     vi.resetAllMocks();
   });
 
+  it("shows skeleton when loading", () => {
+    mockUseGetFilmsQueryLoading();
+    const Stub = createRoutesStub([
+      {
+        path: "/films",
+        Component: FilmsPage,
+      },
+    ]);
+
+    render(<Stub initialEntries={["/films"]} />);
+    expect(screen.getAllByTestId("content-skeleton")).toHaveLength(12);
+  });
+
   it("renders heading and films", async () => {
+    mockUseGetFilmsQuerySuccess();
     const Stub = createRoutesStub([
       {
         path: "/films",

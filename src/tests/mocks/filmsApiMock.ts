@@ -2,7 +2,16 @@ import { vi } from "vitest";
 
 import * as filmsApi from "../../store/api";
 
-export function mockUseGetFilmsQuery(data = defaultData) {
+export function mockUseGetFilmsQueryLoading() {
+  vi.spyOn(filmsApi, "useGetFilmsQuery").mockImplementation(() => ({
+    data: undefined,
+    isLoading: true,
+    isError: false,
+    refetch: vi.fn(),
+  }));
+}
+
+export function mockUseGetFilmsQuerySuccess(data = defaultData) {
   vi.spyOn(filmsApi, "useGetFilmsQuery").mockImplementation(() => ({
     data,
     isLoading: false,

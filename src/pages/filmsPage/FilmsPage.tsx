@@ -31,7 +31,7 @@ export function FilmsPage() {
         <Stack flexWrap={"wrap"} direction={"row"} gap={2}>
           {isLoading
             ? Array.from({ length: 12 }, (_, index) => (
-                <Stack spacing={1} key={index}>
+                <Stack spacing={1} key={index} data-testid="content-skeleton">
                   <Skeleton variant="rectangular" width={300} height={400} />
                   <Skeleton variant="text" width={300} />
                   <Skeleton variant="text" width={300} />
@@ -45,6 +45,7 @@ export function FilmsPage() {
                 />
               ))}
         </Stack>
+
         <Stack>
           <PaginationControlled
             totalPage={totalPages}
