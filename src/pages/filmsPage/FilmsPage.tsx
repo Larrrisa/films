@@ -1,10 +1,10 @@
 import { Typography } from "@mui/material";
-import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import React from "react";
 import { useSearchParams } from "react-router";
 
 import PaginationControlled from "../../components/pagination/Pagination";
+import CustomSkeleton from "../../components/skeleton/CustomSkeleton";
 import Card from "../../components/сard/Card";
 import { useGetFilmsQuery } from "../../store/api";
 import { Film } from "../../types/types";
@@ -29,21 +29,17 @@ export function FilmsPage() {
       <Typography variant="h1">Films</Typography>
       <Stack className={style.container} direction={"column"} spacing={2}>
         <Stack flexWrap={"wrap"} direction={"row"} gap={2}>
-          {isLoading
-            ? Array.from({ length: 12 }, (_, index) => (
-                <Stack spacing={1} key={index} data-testid="content-skeleton">
-                  <Skeleton variant="rectangular" width={300} height={400} />
-                  <Skeleton variant="text" width={300} />
-                  <Skeleton variant="text" width={300} />
-                </Stack>
-              ))
-            : filmsData?.map((film: Film) => (
-                <Card
-                  data={{ ...film, type: "film" }}
-                  key={film.id}
-                  width={300}
-                />
-              ))}
+          {isLoading ? (
+            <CustomSkeleton count={12} />
+          ) : (
+            filmsData?.map((film: Film) => (
+              <Card
+                data={{ ...film, type: "film" }}
+                key={film.id}
+                width={300}
+              />
+            ))
+          )}
         </Stack>
 
         <Stack>
